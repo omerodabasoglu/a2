@@ -1,0 +1,97 @@
+body {
+    width: 60%;
+    margin: auto;
+}
+
+header {
+    background-color: #f1f2f2;
+    font-size: 3em;
+    text-align: center;
+    padding: 5%;
+    height: 150px;
+    color: #eb5a5b;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    transition: 2s;
+    -webkit-transition: 2s;
+    margin: 0 0 20px 0;
+}
+
+.form-control {
+    width: 100px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+#cardio {
+    text-align: center;
+}
+
+input[type="submit"] {
+    margin-left: 30%;
+    margin-top: 5%;
+    width: 30%;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: 'Gloria Hallelujah';
+    background-color: rgba(235, 90, 91, 0.5);
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border-style: solid;
+    border-color: #414042;
+    border-radius: 35px;
+    font-size: 1.5em;
+    transition: 0.5s;
+    width: 50%;
+    float: left;
+    clear: both;
+}
+
+h2 {
+    border-style: dashed;
+    border-color: #414042;
+    border-radius: 35px;
+    transition: 2s;
+}
+
+#calorie {
+    font-size: 4em;
+    margin-top: 1em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+}
+
+#weight {
+    font-size: 4em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+}
+
+input[type="submit"] {
+    background-color: #f1f2f2;
+    color: #414042;
+}
+
+input[type="submit"]:hover {
+    background-color: #eb5a5b;
+}
+
+#reset {
+    float: right;
+    background-color: red;
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
+#reset a {
+    color: #f1f2f2;
+}
+
+#reset a:hover {
+    text-decoration: none;
+}
