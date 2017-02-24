@@ -21,12 +21,6 @@ class Form {
 
     }
 
-    /**
-	* Get a value from the request, with the option of including a default
-    * if the value is not set.
-    * Example usage:
-    *   $email = $this->get('email','example@gmail.com');
-	*/
     public function get($name, $default = null) {
 
         $value = isset($this->request[$name]) ? $this->request[$name] : $default;
@@ -35,26 +29,12 @@ class Form {
 
     }
 
-
-    /**
-	* Determines if a single checkbox is checked
-    * Example usage:
-    *   <input type='checkbox' name='caseSensitive' <?php if($form->isChecked('caseSensitive')) echo 'CHECKED' ?>>
-	*/
     public function isChosen($name) {
         $value = isset($this->request[$name]) ? true : false;
 
         return $value;
     }
 
-
-    /**
-	* Use in display files to prefill the values of fields if those values are in the request
-    * Second optional parameter lets you set a default value if value does not exist
-    *
-    * Example usage:
-    *   <input type='text' name='email' value='<?=$form->prefill($email, "example@gmail.com")?>'>
-	*/
     public function prefill($field, $default = '', $sanitize = true) {
 
         if(isset($this->request[$field])) {
@@ -96,14 +76,6 @@ class Form {
 
     }
 
-
-    /**
-	* Given an array of fields => validation rules
-    * Will loop through each field's rules
-    * Returns an array of error messages
-    *
-    * Note: Stops after the first error for a given field
-	*/
     public function validate($fieldsToValidate) {
 
         $errors = [];
@@ -115,16 +87,13 @@ class Form {
 
             foreach($rules as $rule) {
 
-                # Get the value for this field from the request
                 $value = $this->get($fieldName);
 
-                # Handle any parameters with the rule, e.g. max:99
                 $parameter = null;
                 if(strstr($rule, ':')) {
                     list($rule, $parameter) = explode(':', $rule);
                 }
 
-                # Run the validation test with the given rule
                 $test = $this->$rule($value, $parameter);
 
                 # Test failed

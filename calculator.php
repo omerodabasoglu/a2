@@ -7,7 +7,7 @@ $time = (isset($_GET['time'])) ? $_GET['time'] : '';
 $cardio = (isset($_GET['cardio'])) ? $_GET['cardio'] : '';
 
 $calorie = $time * $days + $cardio * 50;
-$weight = $calorie / 10;
+$weight = $calorie / 20;
 
 $form = new DWA\Form($_GET);
 $errors = [];
