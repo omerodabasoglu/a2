@@ -1,5 +1,6 @@
 <?php
 require('Form.php');
+require('tools.php');
 
 $days = (isset($_GET['days'])) ? sanitize($_GET['days']) : '';
 $time = (isset($_GET['time'])) ? $_GET['time'] : '';
