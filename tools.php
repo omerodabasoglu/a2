@@ -1,27 +1,27 @@
 <?php
-namespace DWA;
-class Tools {
-    /**
-    * Pretty print given value to screen
-    */
-    public static function dump($mixed = null) {
-        echo '<pre>';
-        var_dump($mixed);
-        echo '</pre>';
+/**
+*
+*/
+function dump($mixed = null) {
+    echo '<pre>';
+    var_dump($mixed);
+    echo '</pre>';
+}
+/**
+*
+*/
+function sanitize($mixed = null) {
+    if(!is_array($mixed)) {
+        return convertHtmlEntities($mixed);
     }
-    # Alias for above method
-    public static function d($mixed = null) {
-        self::dump($mixed);
+    function array_map_recursive($callback, $array) {
+        $func = function ($item) use (&$func, &$callback) {
+            return is_array($item) ? array_map($func, $item) : call_user_func($callback, $item);
+        };
+        return array_map($func, $array);
     }
-    /**
-    * Pretty print given value to screen, then die
-    */
-    public static function diedump($mixed = null) {
-        self::dump($mixed);
-        die();
-    }
-    # Alias for above method
-    public static function dd($mixed = null) {
-        self::diedump($mixed);
-    }
-} # end of class
+    return array_map_recursive('convertHtmlEntities', $mixed);
+}
+function convertHtmlEntities($mixed) {
+    return htmlentities($mixed, ENT_QUOTES, "UTF-8");
+}

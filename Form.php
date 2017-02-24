@@ -21,7 +21,6 @@ class Form {
 
     }
 
-
     /**
 	* Get a value from the request, with the option of including a default
     * if the value is not set.
