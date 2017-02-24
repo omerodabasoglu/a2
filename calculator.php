@@ -14,7 +14,7 @@ $errors = [];
 
 $errors = $form->validate(
     [
-        'days' => 'required|numeric|min:1|max:8',
+        'days' => 'required|numeric|min:0|max:8',
         'time' => 'required',
         'cardio' => 'required',
     ]
